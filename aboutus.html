@@ -1,37 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Menu Simple con HTML Y CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce más sobre Panadería Matatlán">
+    <title>Sobre Nosotros | Panadería Matatlán</title>
     <link rel="stylesheet" href="estilos.css">
-
 </head>
 <body>
-<main>
-<header>
-    <nav class="navegacion">
-        <img src="img/miku.png" alt="Logo">
-        <div>
-            <h1>Panadería Matatlán</h1>
-            <ul class="menu">
-                <li><a href="NuestroPan.html">Galería</a></li>
-                <li><a href="aboutus.html">Sobre Nosotros</a></li>
-                <li><a href="#">Contactanos!</a>
-                    <ul class="submenu">
-                        <li><a href="form.html">Formulario</a></li>
-                        <li><a href="ubicacion.html">Ubicación</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="btone">
-            <p> Boton</p>
-            <img src="img/btne.png" alt="boton">
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navegacion">
+            <a href="index.html" class="logo-link">
+                <img src="img/miku.png" alt="Logo Panadería Matatlán">
+            </a>
+            <div class="nav-content">
+                <h1>Panadería Matatlán</h1>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="NuestroPan.html">Galería</a></li>
+                    <li><a href="aboutus.html" class="active">Sobre Nosotros</a></li>
+                    <li class="menu-dropdown">
+                        <a href="#">Contáctanos</a>
+                        <ul class="submenu">
+                            <li><a href="form.html">Formulario</a></li>
+                            <li><a href="ubicacion.html">Ubicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <div class="AboutUs" aria-label="Sección Sobre nosotros">
+    <main>
+
+        <section class="AboutUs" aria-label="Sección Sobre nosotros">
             <article class="AboutUs__card" id="sobre-nosotros">
                 <h2>Sobre nosotros</h2>
                 <p>
@@ -84,8 +86,14 @@
                     la temática musical‑digital de la marca y fiel a una panadería.
                 </p>
             </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Creado por Abril Erandi Magaña Avila</p>
+            <p>26/10/2025 | 22300053 | 7A1☻</p>
         </div>
-    <p>Creado por Abril Erandi Magaña Avila<br>26/10/2025<br>22300053<br>7A1☻</p>
-</main>
+    </footer>
 </body>
 </html>

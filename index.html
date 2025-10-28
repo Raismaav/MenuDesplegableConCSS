@@ -1,36 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Menu Simple con HTML Y CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panadería Matatlán - Pan artesanal con inspiración japonesa">
+    <title>Panadería Matatlán | Inicio</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<header>
-    <nav class="navegacion">
-        <img src="img/miku.png" alt="Logo">
-        <div>
-            <h1>Panadería Matatlán</h1>
-            <ul class="menu">
-                <li><a href="NuestroPan.html">Galería</a></li>
-                <li><a href="aboutus.html">Sobre Nosotros</a></li>
-                <li><a href="#">Contactanos!</a>
-                    <ul class="submenu">
-                        <li><a href="form.html">Formulario</a></li>
-                        <li><a href="ubicacion.html">Ubicación</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <header>
+        <nav class="navegacion">
+            <a href="index.html" class="logo-link">
+                <img src="img/miku.png" alt="Logo Panadería Matatlán">
+            </a>
+            <div class="nav-content">
+                <h1>Panadería Matatlán</h1>
+                <ul class="menu">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="NuestroPan.html">Galería</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li class="menu-dropdown">
+                        <a href="#">Contáctanos</a>
+                        <ul class="submenu">
+                            <li><a href="form.html">Formulario</a></li>
+                            <li><a href="ubicacion.html">Ubicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Bienvenidos a Panadería Matatlán</h2>
+                <p class="hero-subtitle">Pan artesanal con un toque de creatividad japonesa</p>
+                <div class="hero-cta">
+                    <a href="NuestroPan.html" class="btn btn-primary">Ver Galería</a>
+                    <a href="form.html" class="btn btn-secondary">Contáctanos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🍞</div>
+                        <h3>Pan Artesanal</h3>
+                        <p>Elaborado diariamente con ingredientes frescos y de la más alta calidad</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Diseños Creativos</h3>
+                        <p>Inspirados en la cultura pop japonesa y personajes icónicos</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">✨</div>
+                        <h3>Sabor Único</h3>
+                        <p>Combinamos técnicas tradicionales con innovación en cada bocado</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>¿Listo para probar nuestro pan?</h2>
+                <p>Visítanos o contáctanos para hacer tu pedido</p>
+                <a href="ubicacion.html" class="btn btn-primary">Encuéntranos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Creado por Abril Erandi Magaña Avila</p>
+            <p>26/10/2025 | 22300053 | 7A1☻</p>
         </div>
-        <div class="btone">
-            <p> Boton</p>
-            <img src="img/btne.png" alt="boton">
-        </div>
-    </nav>
-    <footer>
-        <p><br><br><br><br>Creado por Abril Erandi Magaña Avila<br>26/10/2025<br>22300053<br>7A1☻</p>
     </footer>
-</header>
 </body>
 </html>
 

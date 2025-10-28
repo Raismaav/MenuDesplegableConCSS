@@ -1,97 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contáctanos - Panadería Matatlán">
+    <title>Formulario de Contacto | Panadería Matatlán</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<header>
-    <nav class="navegacion">
-        <img src="img/miku.png" alt="Logo">
-        <div>
-            <h1>Panadería Matatlán</h1>
+    <header>
+        <nav class="navegacion">
+            <a href="index.html" class="logo-link">
+                <img src="img/miku.png" alt="Logo Panadería Matatlán">
+            </a>
+            <div class="nav-content">
+                <h1>Panadería Matatlán</h1>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="NuestroPan.html">Galería</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li class="menu-dropdown">
+                        <a href="#" class="active">Contáctanos</a>
+                        <ul class="submenu">
+                            <li><a href="form.html">Formulario</a></li>
+                            <li><a href="ubicacion.html">Ubicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-            <ul class="menu">
-                <li><a href="NuestroPan.html">Galería</a></li>
-                <li><a href="aboutus.html">Sobre Nosotros</a></li>
-                <li><a href="#">Contactanos!</a>
-                    <ul class="submenu">
-                        <li><a href="form.html">Formulario</a></li>
-                        <li><a href="ubicacion.html">Ubicación</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="btone">
-            <p> Boton</p>
-            <img src="img/btne.png" alt="boton">
-        </div>
-    </nav>
-    <h2><br>Formulario</h2>
-    <div class="FormContainer">
-        <div class="formulario">
-            <form action="" method="get">
-                <p>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre" maxlength="50" />
-                </p>
+    <main>
+        <section class="form-header">
+            <h2>Formulario de Contacto</h2>
+            <p>Nos encantaría saber de ti</p>
+        </section>
 
-                <p>
-                    <label for="apellidos">Apellidos:</label>
-                    <input type="text" name="apellidos" id="apellidos" maxlength="50" />
-                </p>
+        <div class="FormContainer">
+            <form class="formulario" action="" method="get">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" maxlength="50" required placeholder="Tu nombre" />
+                </div>
 
-                <p>
-                    Sexo:
-                    <input type="radio" name="sexo" id="sexo_h" value="h" />
-                    <label for="sexo_h">hombre</label>
-                    <input type="radio" name="sexo" id="sexo_m" value="m" />
-                    <label for="sexo_m">mujer</label>
-                </p>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos" maxlength="50" required placeholder="Tus apellidos" />
+                </div>
 
-                <p>
-                    <label for="correo">Correo:</label>
-                    <input type="text" name="correo" id="correo" maxlength="100" />
-                </p>
+                <div class="form-group">
+                    <label>Sexo</label>
+                    <div class="radio-group">
+                        <input type="radio" name="sexo" id="sexo_h" value="h" />
+                        <label for="sexo_h">Hombre</label>
+                        <input type="radio" name="sexo" id="sexo_m" value="m" />
+                        <label for="sexo_m">Mujer</label>
+                    </div>
+                </div>
 
-                <p>
-                    <label for="poblacion">Municipio:</label>
-                    <select name="poblacion" id="poblacion">
-                        <option>Guadalajara</option>
-                        <option>Zapopan</option>
-                        <option>Tonalá</option>
-                        <option>Tlaquepaque</option>
-                        <option>Tlajomulco de Zúñiga</option>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" name="correo" id="correo" maxlength="100" required placeholder="tu@email.com" />
+                </div>
+
+                <div class="form-group">
+                    <label for="poblacion">Municipio</label>
+                    <select name="poblacion" id="poblacion" required>
+                        <option value="">Selecciona tu municipio</option>
+                        <option value="guadalajara">Guadalajara</option>
+                        <option value="zapopan">Zapopan</option>
+                        <option value="tonala">Tonalá</option>
+                        <option value="tlaquepaque">Tlaquepaque</option>
+                        <option value="tlajomulco">Tlajomulco de Zúñiga</option>
                     </select>
-                </p>
+                </div>
 
-                <p>
-                    <label for="descripcion">Descripción:</label><br>
-                    <textarea name="descripcion" id="descripcion" rows="6" cols="60"></textarea>
-                </p>
+                <div class="form-group">
+                    <label for="descripcion">Mensaje</label>
+                    <textarea name="descripcion" id="descripcion" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
 
-                <p>
+                <div class="form-group checkbox-group">
                     <input type="checkbox" name="info" id="info" checked="checked" />
-                    <label for="info">Deseo recibir información sobre novedades y ofertas en mi empresa</label>
-                </p>
+                    <label for="info">Deseo recibir información sobre novedades y ofertas</label>
+                </div>
 
-                <p>
-                    <input type="checkbox" name="condiciones" id="condiciones" />
-                    <label for="condiciones">Declaro haber leído y acepto las condiciones generales
-                        y la normativa<br>sobre protección de datos</label>
-                </p>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" name="condiciones" id="condiciones" required />
+                    <label for="condiciones">Declaro haber leído y acepto las condiciones generales y la normativa sobre protección de datos</label>
+                </div>
 
-                <p>
-                    <input type="submit" value="enviar" />
-                </p>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-submit">Enviar Mensaje</button>
+                </div>
             </form>
         </div>
-    </div>
-    <footer>
-        <p><br><br><br>Creado por Abril Erandi Magaña Avila<br>26/10/2025<br>22300053<br>7A1☻</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Creado por Abril Erandi Magaña Avila</p>
+            <p>26/10/2025 | 22300053 | 7A1☻</p>
+        </div>
     </footer>
-</header>
 </body>
 </html>
 

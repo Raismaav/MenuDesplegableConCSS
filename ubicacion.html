@@ -1,41 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Menu Simple con HTML Y CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ubicación de Panadería Matatlán">
+    <title>Ubicación | Panadería Matatlán</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<header>
-    <nav class="navegacion">
-        <img src="img/miku.png" alt="Logo">
-        <div>
-            <h1>Panadería Matatlán</h1>
-            <ul class="menu">
-                <li><a href="NuestroPan.html">Galería</a></li>
-                <li><a href="aboutus.html">Sobre Nosotros</a></li>
-                <li><a href="#">Contactanos!</a>
-                    <ul class="submenu">
-                        <li><a href="form.html">Formulario</a></li>
-                        <li><a href="ubicacion.html">Ubicación</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <header>
+        <nav class="navegacion">
+            <a href="index.html" class="logo-link">
+                <img src="img/miku.png" alt="Logo Panadería Matatlán">
+            </a>
+            <div class="nav-content">
+                <h1>Panadería Matatlán</h1>
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="NuestroPan.html">Galería</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li class="menu-dropdown">
+                        <a href="#" class="active">Contáctanos</a>
+                        <ul class="submenu">
+                            <li><a href="form.html">Formulario</a></li>
+                            <li><a href="ubicacion.html">Ubicación</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="location-header">
+            <h2>Nuestra Ubicación</h2>
+            <p>Visítanos y descubre nuestros productos artesanales</p>
+        </section>
+
+        <section class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.212857677744!2d-103.19582442423784!3d20.660917400310005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b5e96e4bbd65%3A0x3116a98101842b0f!2sCETI%20Plantel%20Rio%20Santiago!5e0!3m2!1ses-419!2smx!4v1760629004256!5m2!1ses-419!2smx" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de ubicación de Panadería Matatlán">
+            </iframe>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Creado por Abril Erandi Magaña Avila</p>
+            <p>26/10/2025 | 22300053 | 7A1☻</p>
         </div>
-        <div class="btone">
-            <p> Boton</p>
-            <img src="img/btne.png" alt="boton">
-        </div>
-    </nav>
-    <h2>Ubicación</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.212857677744!2d-103.19582442423784!3d20.
-    660917400310005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b5e96e4bbd65%3A0x3116a98101842b0f!2sCETI%
-    20Plantel%20Rio%20Santiago!5e0!3m2!1ses-419!2smx!4v1760629004256!5m2!1ses-419!2smx" width="600" height="450"
-            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <footer>
-        <p><br><br><br><br>Creado por Abril Erandi Magaña Avila<br>26/10/2025<br>22300053<br>7A1☻</p>
     </footer>
-</header>
 </body>
 </html>
 
