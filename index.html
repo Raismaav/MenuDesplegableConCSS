@@ -5,40 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Panadería Matatlán - Pan artesanal con inspiración japonesa">
     <title>Panadería Matatlán | Inicio</title>
+    
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
+    <header class="mdc-top-app-bar">
         <nav class="navegacion">
+            <button class="menu-button" id="menuBtn" aria-label="Abrir menú">
+                <span class="material-icons">menu</span>
+            </button>
             <a href="index.html" class="logo-link">
                 <img src="img/miku.png" alt="Logo Panadería Matatlán">
             </a>
             <div class="nav-content">
                 <h1>Panadería Matatlán</h1>
                 <ul class="menu">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="NuestroPan.html">Galería</a></li>
-                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li><a href="index.html" class="active nav-ripple">Inicio</a></li>
+                    <li><a href="NuestroPan.html" class="nav-ripple">Galería</a></li>
+                    <li><a href="aboutus.html" class="nav-ripple">Sobre Nosotros</a></li>
                     <li class="menu-dropdown">
-                        <a href="#">Contáctanos</a>
+                        <a href="#" class="nav-ripple">Contáctanos</a>
                         <ul class="submenu">
-                            <li><a href="form.html">Formulario</a></li>
-                            <li><a href="ubicacion.html">Ubicación</a></li>
+                            <li><a href="form.html" class="nav-ripple">Formulario</a></li>
+                            <li><a href="ubicacion.html" class="nav-ripple">Ubicación</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                <span class="material-icons">dark_mode</span>
+            </button>
         </nav>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="nav-drawer" id="navDrawer">
+        <div class="drawer-header">
+            <img src="img/miku.png" alt="Logo">
+            <h2>Panadería Matatlán</h2>
+            <button class="close-drawer" id="closeDrawer" aria-label="Cerrar menú">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <nav class="drawer-content">
+            <a href="index.html" class="drawer-item active">
+                <span class="material-icons">home</span>
+                <span>Inicio</span>
+            </a>
+            <a href="NuestroPan.html" class="drawer-item">
+                <span class="material-icons">photo_library</span>
+                <span>Galería</span>
+            </a>
+            <a href="aboutus.html" class="drawer-item">
+                <span class="material-icons">info</span>
+                <span>Sobre Nosotros</span>
+            </a>
+            <div class="drawer-divider"></div>
+            <a href="form.html" class="drawer-item">
+                <span class="material-icons">mail</span>
+                <span>Formulario</span>
+            </a>
+            <a href="ubicacion.html" class="drawer-item">
+                <span class="material-icons">location_on</span>
+                <span>Ubicación</span>
+            </a>
+        </nav>
+    </aside>
+    <div class="drawer-scrim" id="drawerScrim"></div>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h2 class="hero-title">Bienvenidos a Panadería Matatlán</h2>
-                <p class="hero-subtitle">Pan artesanal con un toque de creatividad japonesa</p>
-                <div class="hero-cta">
-                    <a href="NuestroPan.html" class="btn btn-primary">Ver Galería</a>
-                    <a href="form.html" class="btn btn-secondary">Contáctanos</a>
+                <h2 class="hero-title fade-in">Bienvenidos a Panadería Matatlán</h2>
+                <p class="hero-subtitle fade-in-delay">Pan artesanal con un toque de creatividad japonesa</p>
+                <div class="hero-cta fade-in-delay-2">
+                    <a href="NuestroPan.html" class="btn btn-primary btn-ripple">
+                        <span class="material-icons">photo_library</span>
+                        Ver Galería
+                    </a>
+                    <a href="form.html" class="btn btn-secondary btn-ripple">
+                        <span class="material-icons">mail</span>
+                        Contáctanos
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number counter" data-target="500">0</span>
+                        <span class="stat-label">Clientes Felices</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number counter" data-target="50">0</span>
+                        <span class="stat-label">Productos Únicos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number counter" data-target="5">0</span>
+                        <span class="stat-label">Años de Experiencia</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -46,20 +113,35 @@
         <section class="features">
             <div class="container">
                 <div class="features-grid">
-                    <article class="feature-card">
-                        <div class="feature-icon">🍞</div>
+                    <article class="feature-card card-ripple scroll-reveal">
+                        <div class="feature-icon-wrapper">
+                            <span class="material-icons feature-icon-material">bakery_dining</span>
+                        </div>
                         <h3>Pan Artesanal</h3>
                         <p>Elaborado diariamente con ingredientes frescos y de la más alta calidad</p>
+                        <div class="card-progress">
+                            <div class="progress-bar" style="width: 100%"></div>
+                        </div>
                     </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">🎨</div>
+                    <article class="feature-card card-ripple scroll-reveal">
+                        <div class="feature-icon-wrapper">
+                            <span class="material-icons feature-icon-material">palette</span>
+                        </div>
                         <h3>Diseños Creativos</h3>
                         <p>Inspirados en la cultura pop japonesa y personajes icónicos</p>
+                        <div class="card-progress">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
                     </article>
-                    <article class="feature-card">
-                        <div class="feature-icon">✨</div>
+                    <article class="feature-card card-ripple scroll-reveal">
+                        <div class="feature-icon-wrapper">
+                            <span class="material-icons feature-icon-material">auto_awesome</span>
+                        </div>
                         <h3>Sabor Único</h3>
                         <p>Combinamos técnicas tradicionales con innovación en cada bocado</p>
+                        <div class="card-progress">
+                            <div class="progress-bar" style="width: 98%"></div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -69,23 +151,73 @@
             <div class="container">
                 <h2>¿Listo para probar nuestro pan?</h2>
                 <p>Visítanos o contáctanos para hacer tu pedido</p>
-                <a href="ubicacion.html" class="btn btn-primary">Encuéntranos</a>
+                <div class="cta-buttons">
+                    <a href="ubicacion.html" class="btn btn-primary btn-ripple">
+                        <span class="material-icons">location_on</span>
+                        Encuéntranos
+                    </a>
+                    <button class="btn btn-secondary btn-ripple" id="shareBtn">
+                        <span class="material-icons">share</span>
+                        Compartir
+                    </button>
+                </div>
             </div>
         </section>
     </main>
 
-    <a href="form.html" class="btn-fab" aria-label="Contáctanos" title="Contáctanos">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-        </svg>
+    <!-- FAB with extended variant -->
+    <a href="form.html" class="btn-fab extended" id="fabContact" aria-label="Contáctanos">
+        <span class="material-icons">chat</span>
+        <span class="fab-label">Contáctanos</span>
     </a>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+
+    <!-- Snackbar for notifications -->
+    <div class="snackbar" id="snackbar">
+        <span class="snackbar-text"></span>
+        <button class="snackbar-action" id="snackbarAction">OK</button>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-content">
-            <p>Creado por Abril Erandi Magaña Avila</p>
-            <p>26/10/2025 | 22300053 | 7A1☻</p>
+            <div class="footer-section">
+                <h3>Panadería Matatlán</h3>
+                <p>Pan artesanal con inspiración japonesa</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <span class="material-icons">facebook</span>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <span class="material-icons">photo_camera</span>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">
+                        <span class="material-icons">chat</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="NuestroPan.html">Galería</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li><a href="form.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>Creado por Abril Erandi Magaña Avila</p>
+                <p>26/10/2025 | 22300053 | 7A1☻</p>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script src="app.js"></script>
 </body>
 </html>
 
