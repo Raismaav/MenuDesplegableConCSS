@@ -5,71 +5,475 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Galería de productos de Panadería Matatlán">
     <title>Galería | Panadería Matatlán</title>
+    
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
+    <header class="mdc-top-app-bar">
         <nav class="navegacion">
+            <button class="menu-button" id="menuBtn" aria-label="Abrir menú">
+                <span class="material-icons">menu</span>
+            </button>
             <a href="index.html" class="logo-link">
                 <img src="img/miku.png" alt="Logo Panadería Matatlán">
             </a>
             <div class="nav-content">
                 <h1>Panadería Matatlán</h1>
                 <ul class="menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="NuestroPan.html" class="active">Galería</a></li>
-                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li><a href="index.html" class="nav-ripple">Inicio</a></li>
+                    <li><a href="NuestroPan.html" class="active nav-ripple">Galería</a></li>
+                    <li><a href="aboutus.html" class="nav-ripple">Sobre Nosotros</a></li>
                     <li class="menu-dropdown">
-                        <a href="#">Contáctanos</a>
+                        <a href="#" class="nav-ripple">Contáctanos</a>
                         <ul class="submenu">
-                            <li><a href="form.html">Formulario</a></li>
-                            <li><a href="ubicacion.html">Ubicación</a></li>
+                            <li><a href="form.html" class="nav-ripple">Formulario</a></li>
+                            <li><a href="ubicacion.html" class="nav-ripple">Ubicación</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                <span class="material-icons">dark_mode</span>
+            </button>
         </nav>
     </header>
 
+    <!-- Mobile Navigation Drawer -->
+    <aside class="nav-drawer" id="navDrawer">
+        <div class="drawer-header">
+            <img src="img/miku.png" alt="Logo">
+            <h2>Panadería Matatlán</h2>
+            <button class="close-drawer" id="closeDrawer" aria-label="Cerrar menú">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <nav class="drawer-content">
+            <a href="index.html" class="drawer-item">
+                <span class="material-icons">home</span>
+                <span>Inicio</span>
+            </a>
+            <a href="NuestroPan.html" class="drawer-item active">
+                <span class="material-icons">photo_library</span>
+                <span>Galería</span>
+            </a>
+            <a href="aboutus.html" class="drawer-item">
+                <span class="material-icons">info</span>
+                <span>Sobre Nosotros</span>
+            </a>
+            <div class="drawer-divider"></div>
+            <a href="form.html" class="drawer-item">
+                <span class="material-icons">mail</span>
+                <span>Formulario</span>
+            </a>
+            <a href="ubicacion.html" class="drawer-item">
+                <span class="material-icons">location_on</span>
+                <span>Ubicación</span>
+            </a>
+        </nav>
+    </aside>
+    <div class="drawer-scrim" id="drawerScrim"></div>
+
     <main>
         <section class="gallery-header">
-            <h2>Nuestro Pan</h2>
-            <p>Descubre nuestras deliciosas creaciones artesanales</p>
+            <h2 class="fade-in">Nuestro Pan</h2>
+            <p class="fade-in-delay">Descubre nuestras deliciosas creaciones artesanales</p>
+            
+            <!-- Gallery Controls -->
+            <div class="gallery-controls fade-in-delay-2">
+                <div class="search-box">
+                    <span class="material-icons">search</span>
+                    <input type="text" id="gallerySearch" placeholder="Buscar productos...">
+                </div>
+                <div class="filter-chips">
+                    <button class="chip active" data-filter="all">
+                        <span class="material-icons">bakery_dining</span>
+                        Todos
+                    </button>
+                    <button class="chip" data-filter="panes">
+                        <span class="material-icons">breakfast_dining</span>
+                        Panes
+                    </button>
+                    <button class="chip" data-filter="pasteles">
+                        <span class="material-icons">cake</span>
+                        Pasteles
+                    </button>
+                    <button class="chip" data-filter="galletas">
+                        <span class="material-icons">cookie</span>
+                        Galletas
+                    </button>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" aria-label="Vista grid">
+                        <span class="material-icons">grid_view</span>
+                    </button>
+                    <button class="view-btn" data-view="list" aria-label="Vista lista">
+                        <span class="material-icons">view_list</span>
+                    </button>
+                </div>
+            </div>
         </section>
 
-        <section class="carrusel">
-        <ul>
-            <li id="s1"><img src="img/pam/img1.jpg" alt="foto 1"></li>
-            <li id="s2"><img src="img/pam/img2.jpg"  alt="foto 2"></li>
-            <li id="s3"><img src="img/pam/img3.jpg"  alt="foto 3"></li>
-            <li id="s4"><img src="img/pam/img4.jpg"  alt="foto 4"></li>
-            <li id="s5"><img src="img/pam/img5.jpg"  alt="foto 5"></li>
-            <li id="s6"><img src="img/pam/img6.jpg"  alt="foto 6"></li>
-            <li id="s7"><img src="img/pam/img7.jpg"  alt="foto 7"></li>
-            <li id="s8"><img src="img/pam/img8.jpg"  alt="foto 8"></li>
-            <li id="s9"><img src="img/pam/img9.jpg"  alt="foto 9"></li>
-            <li id="s10"><img src="img/pam/img10.jpg "  alt="foto 10"></li>
-            <li id="s11"><img src="img/pam/img11.jpg"  alt="foto 11"></li>
-            <li id="s12"><img src="img/pam/img12.jpg"  alt="foto 12"></li>
-            <li id="s13"><img src="img/pam/img13.jpg"  alt="foto 13"></li>
-            <li id="s14"><img src="img/pam/img14.jpg"  alt="foto 14"></li>
-            <li id="s15"><img src="img/pam/img15.jpg"  alt="foto 15"></li>
-        </ul>
+        <!-- Advanced Gallery with Masonry Grid -->
+        <section class="gallery-container">
+            <div class="gallery-grid masonry" id="galleryGrid">
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Pan Artesanal">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img1.jpg" alt="Pan Artesanal 1" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Pan Artesanal</h3>
+                            <p>Horneado fresco cada día</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon" aria-label="Ver más">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon" aria-label="Compartir">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="pasteles" data-name="Pastel Especial">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img2.jpg" alt="Pastel Especial" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Pastel Especial</h3>
+                            <p>Decoración única</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Pan Dulce">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img3.jpg" alt="Pan Dulce" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Pan Dulce</h3>
+                            <p>Tradicional y delicioso</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="galletas" data-name="Galletas Decoradas">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img4.jpg" alt="Galletas" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Galletas Decoradas</h3>
+                            <p>Arte comestible</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Baguette">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img5.jpg" alt="Baguette" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Baguette Francesa</h3>
+                            <p>Crujiente por fuera, suave por dentro</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="pasteles" data-name="Cupcakes">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img6.jpg" alt="Cupcakes" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Cupcakes Temáticos</h3>
+                            <p>Perfectos para cualquier ocasión</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Pan de Molde">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img7.jpg" alt="Pan de Molde" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Pan de Molde</h3>
+                            <p>Ideal para sandwiches</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="pasteles" data-name="Tarta">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img8.jpg" alt="Tarta" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Tarta de Frutas</h3>
+                            <p>Frescura y sabor</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="galletas" data-name="Cookies">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img9.jpg" alt="Cookies" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Cookies Caseras</h3>
+                            <p>Con chispas de chocolate</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Croissant">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img10.jpg" alt="Croissant" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Croissant</h3>
+                            <p>Hojaldrado perfecto</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="pasteles" data-name="Macarons">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img11.jpg" alt="Macarons" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Macarons</h3>
+                            <p>Delicadeza francesa</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Pan Integral">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img12.jpg" alt="Pan Integral" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Pan Integral</h3>
+                            <p>Saludable y nutritivo</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="galletas" data-name="Alfajores">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img13.jpg" alt="Alfajores" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Alfajores</h3>
+                            <p>Dulce de leche artesanal</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="pasteles" data-name="Cheesecake">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img14.jpg" alt="Cheesecake" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Cheesecake</h3>
+                            <p>Cremoso y delicioso</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="gallery-item scroll-reveal" data-category="panes" data-name="Focaccia">
+                    <div class="gallery-item-inner">
+                        <img src="img/pam/img15.jpg" alt="Focaccia" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Focaccia</h3>
+                            <p>Con hierbas aromáticas</p>
+                            <div class="gallery-actions">
+                                <button class="btn-icon">
+                                    <span class="material-icons">visibility</span>
+                                </button>
+                                <button class="btn-icon">
+                                    <span class="material-icons">share</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Loading Indicator -->
+            <div class="loading-indicator" id="galleryLoading">
+                <div class="spinner"></div>
+                <p>Cargando más productos...</p>
+            </div>
         </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose">
+                <span class="material-icons">close</span>
+            </button>
+            <button class="lightbox-prev" id="lightboxPrev">
+                <span class="material-icons">chevron_left</span>
+            </button>
+            <button class="lightbox-next" id="lightboxNext">
+                <span class="material-icons">chevron_right</span>
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" id="lightboxImg">
+                <div class="lightbox-caption">
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxDesc"></p>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <a href="form.html" class="btn-fab" aria-label="Contáctanos" title="Contáctanos">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-        </svg>
+    <!-- FAB with extended variant -->
+    <a href="form.html" class="btn-fab extended" id="fabContact">
+        <span class="material-icons">chat</span>
+        <span class="fab-label">Contáctanos</span>
     </a>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+
+    <!-- Snackbar for notifications -->
+    <div class="snackbar" id="snackbar">
+        <span class="snackbar-text"></span>
+        <button class="snackbar-action" id="snackbarAction">OK</button>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-content">
-            <p>Creado por Abril Erandi Magaña Avila</p>
-            <p>26/10/2025 | 22300053 | 7A1☻</p>
+            <div class="footer-section">
+                <h3>Panadería Matatlán</h3>
+                <p>Pan artesanal con inspiración japonesa</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <span class="material-icons">facebook</span>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <span class="material-icons">photo_camera</span>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">
+                        <span class="material-icons">chat</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="NuestroPan.html">Galería</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                    <li><a href="form.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>Creado por Abril Erandi Magaña Avila</p>
+                <p>26/10/2025 | 22300053 | 7A1☻</p>
+            </div>
         </div>
     </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script src="app.js"></script>
+    <script src="gallery.js"></script>
 </body>
 </html>
 
